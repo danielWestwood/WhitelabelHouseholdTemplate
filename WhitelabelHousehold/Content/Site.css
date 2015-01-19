@@ -1,0 +1,199 @@
+﻿body, html
+{
+    margin: 0;
+    font-family: Arial;
+    background-color: grey;
+    overflow-x: hidden;  
+    overflow-y: auto;
+}
+
+/*
+    Add media queries for screen size here
+
+*/
+
+#menu
+{
+    font-family: Arial;
+    background-color: navy;
+    color: white;
+    width: 100%;
+    height: 20px;
+    padding: 10px;
+    text-align: right;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#menu li
+{
+    display: inline;
+    list-style-type: none;
+}
+
+#menu a:link
+{
+    color: #FDF3E7;
+    font-size: 12pt;
+    text-align:  left;
+    text-decoration: none;
+    font-family: Arial;
+    padding-right: 2px;
+}
+
+#menu a:visited
+{
+    color: #FDF3E7;
+    font-size: 12pt;
+    text-align:  left;
+}
+
+#menu a:hover
+{
+    color: navy;
+    background-color: white;
+    font-size: 12pt;
+    text-align:  left;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    
+}
+
+#menu a:active
+{
+    color: #FDF3E7;
+    font-size: 12pt;
+    text-align:  left;
+    padding-top: 10px;
+    padding-bottom: 13px;
+}
+
+.logo
+{
+    padding: 10px;
+}
+
+.content-wrapper
+{
+    max-width: 70%;
+    background-color: white;
+    color: navy;
+    margin: 0 auto;
+}
+
+.editor-label
+{
+    max-width: 70%;
+    background-color: white;
+    color: navy;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.editor-field
+{
+    max-width: 70%;
+    background-color: white;
+    color: navy;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.editor-label-check
+{
+    max-width: 70%;
+    background-color: white;
+    color: navy;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.editor-field-check
+{
+    max-width: 70%;
+    background-color: white;
+    color: navy;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.editor-label-joint
+{
+    max-width: 70%;
+    background-color: white;
+    color: navy;
+    margin: 0 auto;
+    padding: 5px;
+    display: none;
+}
+
+.editor-field-joint
+{
+    max-width: 70%;
+    background-color: white;
+    color: navy;
+    margin: 0 auto;
+    padding: 5px;
+    display: none;
+}
+
+.submit-button
+{
+    max-width: 70%;
+    background-color: white;
+    color: navy;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: right;
+}
+
+.btn {
+  background: navy;
+  background-image: -webkit-linear-gradient(top, navy, #2980b9);
+  background-image: -moz-linear-gradient(top, navy, #2980b9);
+  background-image: -ms-linear-gradient(top, navy, #2980b9);
+  background-image: -o-linear-gradient(top, navy, #2980b9);
+  background-image: linear-gradient(to bottom, navy, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.btn-address
+{
+    padding: 5px;
+    margin: 5px;
+}
+
+.validation
+{
+    color: red;
+    padding: 5px;
+    margin: 5px;
+    max-width: 70%;
+}
+
+footer {
+    
+    background-color: white;
+    color: navy;
+    text-align: left;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 12px;
+}

@@ -1,0 +1,237 @@
+﻿@model WhitelabelHousehold.Models.YourDetailsQuestions
+
+@{
+    ViewBag.Title = "Whitelabel Household Product Template";
+}
+@section featured {
+        <section class="featured">
+            <div class="content-wrapper">
+                <hgroup class="title">
+                    <h1>@ViewBag.Title</h1>
+                </hgroup>
+            </div>
+        </section>
+        <section class="your-details-questions">
+    <div class="content-wrapper">
+        <h2 class="question-grouping">Tell Us About Your Home</h2>
+    </div>
+
+    @using (Html.BeginForm("YourQuote", "Home", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.HouseNumberOrName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.HouseNumberOrName)
+                @Html.ValidationMessageFor(m => Model.HouseNumberOrName, String.Empty, new { @class="validation"})
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.Postcode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.Postcode)
+            @Html.ValidationMessageFor(m => Model.Postcode, String.Empty, new { @class="validation"})
+            <br />
+            <button class="btn-address">Find address</button>
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.Bedrooms)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.Bedrooms)
+            @Html.ValidationMessageFor(m => Model.Bedrooms, String.Empty, new { @class="validation"})
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.TypeOfCover)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.TypeOfCover)
+            @Html.ValidationMessageFor(m => Model.TypeOfCover, String.Empty, new { @class="validation"})
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.YearOfBuild) 
+        </div>
+        <div class="editor-field">
+            @*@Html.DropDownListFor(m => m.SaleChannel, new SelectList(Model.SaleChannels, "Code", "Name"), "Please Select", new { @class = "form-control" })*@
+            @Html.EditorFor(m => Model.YearOfBuild)
+            @Html.ValidationMessageFor(m => Model.YearOfBuild, String.Empty, new { @class="validation"}) 
+            <!--Needs to be DropDownListFor with values and a default "Please Select"-->
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.TypeOfProperty)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.TypeOfProperty)
+            @Html.ValidationMessageFor(m => Model.TypeOfProperty, String.Empty, new { @class="validation" }) <!--Needs to be DropDownListFor with values and a default "Please Select"-->
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.Children)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.Children)
+            @Html.ValidationMessageFor(m => Model.Children, String.Empty, new { @class="validation" }) <!--Needs to be DropDownListFor with values and a default "Please Select"-->
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.CoverStartDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.CoverStartDate)
+            @Html.ValidationMessageFor(m => Model.CoverStartDate, String.Empty, new { @class="validation" }) <!--Can you use this with JQuery UI?-->
+        </div>
+        <div class="content-wrapper">
+            <h2 class="question-grouping">A bit about you</h2>
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.Title)
+            @Html.ValidationMessageFor(m => Model.Title, String.Empty, new { @class="validation" }) <!--Needs to be DropDownListFor with values and a default "Please Select"-->
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.FirstName)
+            @Html.ValidationMessageFor(m => Model.FirstName, String.Empty, new { @class="validation" }) 
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.Surname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.Surname)
+            @Html.ValidationMessageFor(m => Model.Surname, String.Empty, new { @class="validation"})
+        </div>
+        <!--Date Individual Criteria - Day-->
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.Day)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.Day)
+            @Html.ValidationMessageFor(m => Model.Day, String.Empty, new { @class="validation"})
+        </div>
+        <!--Date Individual Criteria - Month-->
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.Month)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.Month)
+            @Html.ValidationMessageFor(m => Model.Month, String.Empty, new { @class="validation"})
+        </div>
+        <!--Date Individual Criteria - Year-->
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.Year)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.Year)
+            @Html.ValidationMessageFor(m => Model.Year, String.Empty, new { @class="validation"})
+        </div>
+        <!--End-->
+        <div class="editor-label-check">
+            @Html.LabelFor(m => Model.JointPolicy)
+        </div>
+        <div class="editor-field-check">
+                @Html.CheckBoxFor(m => Model.JointPolicy, new { @class = "check-toggle" }) <!--Defaults to False (Unchecked)-->
+                @Html.ValidationMessageFor(m => Model.JointPolicy)
+        </div>
+        <!--Joint Policy Criteria-->
+        <div class="editor-label-joint">
+            @Html.LabelFor(m => Model.TheirTitle)
+        </div>
+        <div class="editor-field-joint">
+            @Html.EditorFor(m => Model.TheirTitle)
+            @Html.ValidationMessageFor(m => Model.TheirTitle)
+        </div>
+        <div class="editor-label-joint">
+            @Html.LabelFor(m => Model.TheirFirstName)
+        </div>
+        <div class="editor-field-joint">
+            @Html.EditorFor(m => Model.TheirFirstName)
+            @Html.ValidationMessageFor(m => Model.TheirFirstName)
+        </div>
+        <div class="editor-label-joint">
+            @Html.LabelFor(m => Model.TheirSurname)
+        </div>
+        <div class="editor-field-joint">
+            @Html.EditorFor(m => Model.TheirSurname)
+            @Html.ValidationMessageFor(m => Model.TheirSurname)
+        </div>
+        <!--Joint Policy Holder DoB-->
+        <div class="editor-label-joint">
+            @Html.LabelFor(m => Model.TheirDay)
+        </div>
+        <div class="editor-field-joint">
+            @Html.EditorFor(m => Model.TheirDay)
+            @Html.ValidationMessageFor(m => Model.TheirDay)
+        </div>
+        <div class="editor-label-joint">
+            @Html.LabelFor(m => Model.TheirMonth)
+        </div>
+        <div class="editor-field-joint">
+            @Html.EditorFor(m => Model.TheirMonth)
+            @Html.ValidationMessageFor(m => Model.TheirMonth)
+        </div>
+        <div class="editor-label-joint">
+            @Html.LabelFor(m => Model.TheirYear)
+        </div>
+        <div class="editor-field-joint">
+            @Html.EditorFor(m => Model.TheirYear)
+            @Html.ValidationMessageFor(m => Model.TheirYear)
+        </div>
+        <!--End-->
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.Email)
+            @Html.ValidationMessageFor(m => Model.Email, String.Empty, new { @class="validation" })
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.TelephoneNumber)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => Model.TelephoneNumber)
+            @Html.ValidationMessageFor(m => Model.TelephoneNumber, String.Empty, new { @class="validation" })
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.MobileNumber)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => Model.MobileNumber)
+            @Html.ValidationMessageFor(m => Model.MobileNumber, String.Empty, new { @class="validation"})
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.BuildingsInsurance)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.BuildingsInsurance)
+            @Html.ValidationMessageFor(m => Model.BuildingsInsurance, String.Empty, new { @class="validation" })
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => Model.ContentsInsurance)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => Model.ContentsInsurance)
+            @Html.ValidationMessageFor(m => Model.ContentsInsurance, String.Empty, new { @class="validation" })
+        </div>
+        <div class="content-wrapper">
+            <h2 class="question-grouping">Discounts for your policy</h2>
+        </div>
+        <div class="editor-label">
+            <label>4+ years no claims discount</label>
+        </div>
+        <br />
+        <div class="editor-label">
+            <label>Buying buildings and contents together</label>
+        </div>
+        <div class="submit-button">
+                <input class="btn" type="submit" value="Your Quote" />
+        </div>
+            
+    }
+
+</section>
+ 
+}
